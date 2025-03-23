@@ -29,19 +29,19 @@ newGrid.addEventListener("click", () => {
 
 function newGridSize(count) {
     container.innerHTML = "";
-    
-    const containerSize = 560; 
+
+    const containerSize = 560;
     const squareSize = containerSize / count;
-    
+
     for (let i = 0; i < count * count; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
         square.style.backgroundColor = "pink";
-        square.style.width = `${squareSize}px`; 
+        square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
         container.appendChild(square);
     }
-    
+
     const allNewSquares = document.querySelectorAll(".square");
 
     allNewSquares.forEach(square => {
