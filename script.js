@@ -1,5 +1,6 @@
 const container = document.querySelector("#container");
 const newGrid = document.querySelector("#new");
+const clearGrid = document.querySelector("#clear");
 
 for (let i = 0; i < 16 * 16; i++) {
     const square = document.createElement("div");
@@ -49,4 +50,15 @@ function newGridSize(count) {
         });
     });
 }
+
+function resetGrid() {
+    newGridSize(16);
+}
+
+clearGrid.addEventListener("click", () => {
+    resetGrid();
+});
+
+
+
 
