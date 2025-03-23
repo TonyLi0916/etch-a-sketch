@@ -25,3 +25,21 @@
     border: 1px solid red;
     box-sizing: border-box;
 }
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+#new, #clear {
+    color: #fff;
+    background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 0.5em;
+    cursor: pointer;
+} 
+  
+
+  
