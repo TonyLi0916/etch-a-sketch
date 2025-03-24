@@ -62,23 +62,25 @@ body {
 @keyframes twinkle {
     0%,
     100% {
-      opacity: 0.8;
+        opacity: 0.8;
     }
+
     50% {
-      opacity: 0.4;
+        opacity: 0.4;
     }
-  }
-  
+}
+
 @keyframes shoot {
     0% {
-      transform: translateX(0) translateY(0) rotate(25deg);
-      opacity: 1;
+        transform: translateX(0) translateY(0) rotate(25deg);
+        opacity: 1;
     }
+
     100% {
-      transform: translateX(120vw) translateY(50vh) rotate(25deg);
-      opacity: 0;
+        transform: translateX(120vw) translateY(50vh) rotate(25deg);
+        opacity: 0;
     }
-  }
+}
 
 /* <--- grid and squares ---> */
 
@@ -94,7 +96,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    gap: 24px;
 }
 
 #container {
@@ -116,6 +118,8 @@ body {
     gap: 24px;
 }
 
+#color,
+#rainbow,
 #new,
 #clear {
     color: #fff;
@@ -143,4 +147,30 @@ body {
 
 #github:hover {
     transform: rotate(360deg) scale(1.2);
+}
+
+#colorPicker {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+    align-self: center;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+#colorPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+#colorPicker:hover {
+    transform: scale(1.2);
 }
