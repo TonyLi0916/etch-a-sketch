@@ -87,7 +87,7 @@ body {
     justify-content: center;
     color: #b2bcfa;
     font-family: cursive;
-    font-size: 24px;
+    font-size: 40px;
 }
 
 #wrapper {
@@ -107,8 +107,7 @@ body {
 .square {
     width: 35px;
     height: 35px;
-    border: 1px solid red;
-    box-sizing: border-box;
+    border: 1px solid #404f83;
 }
 
 #buttons {
@@ -125,4 +124,23 @@ body {
     border-radius: 10px;
     font-size: 0.5em;
     cursor: pointer;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    gap: 1em;
+}
+
+#github {
+    width: 2em;
+    transition: transform 0.3s ease-in-out;
+}
+
+#github:hover {
+    transform: rotate(360deg) scale(1.2);
 }

@@ -4,7 +4,7 @@ const clearGrid = document.querySelector("#clear");
 
 for (let i = 0; i < 16 * 16; i++) {
     const square = document.createElement("div");
-    square.style.backgroundColor = "pink";
+    square.style.backgroundColor = "white";
     square.classList.add("square");
     container.appendChild(square);
 }
@@ -36,7 +36,7 @@ function newGridSize(count) {
     for (let i = 0; i < count * count; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
-        square.style.backgroundColor = "pink";
+        square.style.backgroundColor = "white";
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
         container.appendChild(square);
