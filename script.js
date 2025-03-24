@@ -1,33 +1,29 @@
+let isDrawing = false;
+
 const container = document.querySelector("#container");
 const newGrid = document.querySelector("#new");
 const clearGrid = document.querySelector("#clear");
 
-for (let i = 0; i < 16 * 16; i++) {
-    const square = document.createElement("div");
-    square.style.backgroundColor = "white";
-    square.classList.add("square");
-    container.appendChild(square);
-}
+document.addEventListener("mousedown", () => isDrawing = true);
+document.addEventListener("mouseup", () => isDrawing = false);
 
-const allSquares = document.querySelectorAll(".square");
-
-allSquares.forEach(square => {
-    square.addEventListener("mouseover", (e) => {
-        e.target.style.backgroundColor = "purple";
-    });
-});
+createGrid(16);
 
 newGrid.addEventListener("click", () => {
     let count = prompt("Please enter new desired Grid Size! (Up to 100)");
     if (count > 0 && count <= 100) {
-        newGridSize(count);
+        createGrid(count);
     }
     else {
         alert("Please re-enter a valid sizing");
     }
 });
 
-function newGridSize(count) {
+clearGrid.addEventListener("click", () => {
+    createGrid(16);
+});
+
+function createGrid(count) {
     container.innerHTML = "";
 
     const containerSize = 560;
@@ -40,24 +36,23 @@ function newGridSize(count) {
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
         container.appendChild(square);
-    }
-
-    const allNewSquares = document.querySelectorAll(".square");
-
-    allNewSquares.forEach(square => {
-        square.addEventListener("mouseover", (e) => {
+    
+        square.addEventListener("mousedown", (e) => {
             e.target.style.backgroundColor = "purple";
         });
-    });
+    
+        square.addEventListener("mouseover", (e) => {
+            if (isDrawing) {
+                e.target.style.backgroundColor = "purple";
+            }
+        });
+
+        container.appendChild(square);
+    } 
 }
 
-function resetGrid() {
-    newGridSize(16);
-}
 
-clearGrid.addEventListener("click", () => {
-    resetGrid();
-});
+
 
 
 
